@@ -1,0 +1,16 @@
+extends layout.pug
+
+block content
+  h1.mt-5= title
+  form(method="POST")
+    .form-group
+      label(for='name') Event Name
+      input#author.form-control(type='text', placeholder='Enter name', name="name", value=events.name)
+    .form-group
+      label(for='title')  Event Description
+      input#name.form-control(type='text', placeholder='Enter title', name="title", value=events.description)
+    .form-group
+      label(for='numPages') Event Location
+      input#numPages.form-control(type='text', placeholder='Enter Number of Pages', name="numPages", value=events.location)
+      
+    button.btn.btn-primary(type='submit') Submit

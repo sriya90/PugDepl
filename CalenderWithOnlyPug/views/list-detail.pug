@@ -1,0 +1,24 @@
+extends layout.pug
+block content
+  h1.mt-5= title
+    a.btn.btn-primary(href='./event/new' style='margin-left: 25px') New Event
+  table.table
+    thead
+      tr
+        th(scope='col') Event Title
+        th(scope='col') Description
+        th(scope='col') Location
+        th(scope='col') Location
+        th(scope='col') Location
+   
+    tbody
+        each val in eventsOfTheDay
+            tr
+                td=  val.name
+                td=  val.description
+                td=  val.location 
+                td  
+                    a.btn.btn-primary(href='/events/' + val._id + '/update' ) Update
+                td  
+                    a.btn.btn-danger(href='/events/' + val._id + '/delete' ) Delete
+        
